@@ -13,9 +13,16 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/', function () {
+    return "API MOBILE";
 });
 
-$router->get('/lokasi', 'LokasiController@getLokasi');
 $router->get('/cuaca', 'CuacaController@apiCuaca');
+$router->get('/cuaca-kec', 'CuacaController@apiCuacaByIdKec');
+$router->get('/cuaca-kec/{id}', 'CuacaController@apiCuacaByIdKec');
+$router->get('/cuaca-kec-detail', 'CuacaController@apiCuacaDetailByIdKec');
+$router->get('/cuaca-kec-detail/{id}', 'CuacaController@apiCuacaDetailByIdKec');
+$router->get('/cuaca-coor', 'CuacaController@index');
+$router->get('/lokasi', 'LokasiController@getLokasi');
+$router->get('/gempa', 'GempaController@getGempa');
+$router->get('/gempa-terbaru', 'GempaController@getLatestGempa');

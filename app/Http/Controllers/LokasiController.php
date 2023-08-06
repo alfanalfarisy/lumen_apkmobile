@@ -24,6 +24,6 @@ class LokasiController extends Controller
             $listLokasi = Lokasi::select('id', 'kec', 'kabkota', 'prov')->where('kabkota', '=', $kabkota)->get();
         }
 
-        return $listLokasi;
+        return response()->json($listLokasi);
     }
 }
